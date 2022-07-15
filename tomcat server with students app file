@@ -1,0 +1,35 @@
+# Tomcat server create and student application run with the the help of maven
+> apt install openjdk-11-jre-headless -y -------java install
+> apt update
+> apt install maven -y ----------maven install
+> apt update 
+> ls 
+> mkdir bhushan
+> cd bhushan 
+> git clone https://github.com/Bhushankoparkar/studentapp-ui.git ------>git repo.
+> ls
+  studentapp-ui 
+> cd studentapp-ui
+> sudo mvn clean
+> sudo mvn clean package
+ it show target directory 
+> cd target/
+> ls 
+  studentapp-2.2-SNAPSHOT.war
+> cd /
+
+# tomcat server config
+> cd /mnt
+> wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.81/bin/apache-tomcat-8.5.81.tar.gz ------------> tomcat.apache.org( copy 8.5 version)
+> ls
+> tar -xvzf /mnt/apache-tomcat-8.5.81.tar/gz -C /mnt
+> cd apache-tomcat-8.5.81/
+> ls
+> cd /
+> cp /bhushan/studentapp-ui/target/studentapp-2.2-SNAPSHOT.war /mnt/apache-tomcat-8.5.81/webapps/    -----------> copy and past(studentapp-2.2-SNAPSHOT.war)
+> cd /mnt/apache-tomcat-8.5.81/                                                            
+> ./bin/catalina.sh stop  
+> ./bin/catalina.sh start 
+> then public ip past on google crome with 8080 security port 
+      E.g(http://18.230.126.185:8080/studentapp-2.2-SNAPSHOT/)
+
